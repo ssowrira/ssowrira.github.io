@@ -1,8 +1,166 @@
 <!DOCTYPE html>
-<html>
-<body>
-  <h1>Srikarran Sowrirajan</h1>
-  <p>Please find my resume below. This website is currently under development!</p>
-  <a href="Srikarran_Resume.pdf">My resume!</a>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home | Portfolio</title>
+    <meta
+      name="description"
+      content="Professional portfolio for robotics and mechanical engineering research, projects, and publications."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/js/site-config.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/home-projects.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a class="brand" href="/index.html" data-site-text="profile.shortName">Portfolio</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="site-nav-home"
+        >
+          Menu
+        </button>
+        <nav class="site-nav" id="site-nav-home" data-open="false" aria-label="Primary">
+          <a href="/index.html" aria-current="page">Home</a>
+          <a href="/projects.html">Projects</a>
+          <a href="/about.html">About</a>
+          <a href="/hobbies.html">Hobbies</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <a
+            class="button secondary small"
+            data-site-link="links.resume"
+            href="/Srikarran_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
+          <button class="button secondary small" type="button" data-theme-toggle aria-pressed="false">
+            Dark
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-main">
+      <section class="hero">
+        <div class="container hero-grid">
+          <article class="panel hero-copy">
+            <p class="eyebrow">Robotics Portfolio</p>
+            <h1 data-site-text="profile.name">Your Name</h1>
+            <p class="role" data-site-text="profile.role">Your role</p>
+            <p class="bio" data-site-text="profile.shortBio">Short bio goes here.</p>
+            <p class="bio" style="margin-top: 0.6rem" data-site-text="profile.longerBio">
+              Longer bio goes here.
+            </p>
+            <div class="cta-row" aria-label="Primary actions">
+              <a
+                class="button primary"
+                data-site-link="links.resume"
+                href="/Srikarran_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Resume PDF
+              </a>
+              <a class="button secondary" data-site-link="links.email" href="mailto:srikarran@example.com">
+                Email
+              </a>
+              <a
+                class="button secondary"
+                data-site-link="links.linkedin"
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+              <a
+                class="button secondary"
+                data-site-link="links.github"
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <aside class="panel metrics" aria-label="Research highlights">
+            <div class="metric">
+              <strong>Research Focus</strong>
+              <span>Robotic control, simulation-driven design, and sim-to-real transfer.</span>
+            </div>
+            <div class="metric">
+              <strong>Tooling</strong>
+              <span>ROS2, MuJoCo, preCICE, optimization workflows, and ML pipelines.</span>
+            </div>
+            <div class="metric">
+              <strong>Collaboration</strong>
+              <span>Cross-disciplinary work with mechanical, controls, and software teams.</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>Featured Projects</h2>
+          <p class="section-intro">
+            Selected research and engineering efforts across robotics, simulation, and control.
+          </p>
+          <div id="home-projects-grid" class="card-grid" aria-live="polite"></div>
+          <p style="margin-top: 0.9rem">
+            <a class="text-link" href="/projects.html">Browse all projects</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <article class="content-card">
+            <h2>Contact</h2>
+            <p style="margin-bottom: 0.7rem; color: var(--text-muted)">
+              Open to research collaborations, internships, and robotics engineering roles.
+            </p>
+            <a class="button primary" href="/contact.html">Get in touch</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>
+          &copy; <span data-current-year></span>
+          <span data-site-text="profile.name">Your Name</span>
+        </p>
+        <a
+          data-site-link="links.resume"
+          href="/Srikarran_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume PDF
+        </a>
+      </div>
+    </footer>
+  </body>
 </html>

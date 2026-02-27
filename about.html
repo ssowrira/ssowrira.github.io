@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About | Portfolio</title>
+    <meta
+      name="description"
+      content="About page for a robotics and mechanical engineering PhD portfolio with skills and education."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/js/site-config.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a class="brand" href="/index.html" data-site-text="profile.shortName">Portfolio</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="site-nav-about"
+        >
+          Menu
+        </button>
+        <nav class="site-nav" id="site-nav-about" data-open="false" aria-label="Primary">
+          <a href="/index.html">Home</a>
+          <a href="/projects.html">Projects</a>
+          <a href="/about.html" aria-current="page">About</a>
+          <a href="/hobbies.html">Hobbies</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <a
+            class="button secondary small"
+            data-site-link="links.resume"
+            href="/Srikarran_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
+          <button class="button secondary small" type="button" data-theme-toggle aria-pressed="false">
+            Dark
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-main">
+      <section class="section">
+        <div class="container layout-two">
+          <article class="content-card">
+            <h1 style="margin-bottom: 0.75rem">About</h1>
+            <p style="margin-bottom: 0.75rem; color: var(--text-muted)">
+              <strong data-site-text="profile.name">Your Name</strong> is a
+              <span data-site-text="profile.role">Robotics Researcher</span> focused on robust robot behavior in
+              uncertain environments.
+            </p>
+            <p style="margin-bottom: 0.75rem" data-site-text="profile.longerBio">
+              My research sits at the intersection of robotics, simulation, controls, and machine learning.
+            </p>
+            <p>
+              I enjoy building end-to-end systems, from mechanical modeling and simulation setup to controller design,
+              evaluation, and deployment workflows. I prioritize reproducible tooling so collaborators can test ideas
+              quickly and safely.
+            </p>
+          </article>
+
+          <aside class="stack">
+            <article class="content-card">
+              <h3>Skills</h3>
+              <ul>
+                <li><strong>Robotics:</strong> Motion planning, manipulation, legged locomotion, shared autonomy</li>
+                <li><strong>Simulation:</strong> MuJoCo, Gazebo, FSI co-simulation, digital twins</li>
+                <li><strong>Control:</strong> MPC, optimal control, estimation, robust feedback design</li>
+                <li><strong>ML:</strong> Reinforcement learning, representation learning, uncertainty modeling</li>
+                <li><strong>Tools:</strong> ROS2, Python, C++, Docker, GitHub Actions</li>
+              </ul>
+            </article>
+
+            <article class="content-card">
+              <h3>Education</h3>
+              <ul>
+                <li><strong>PhD, Mechanical Engineering</strong> - University Name, 20XX-present</li>
+                <li><strong>MS, Robotics/Mechanical Engineering</strong> - University Name, 20XX</li>
+                <li><strong>BS, Mechanical Engineering</strong> - University Name, 20XX</li>
+              </ul>
+            </article>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>
+          &copy; <span data-current-year></span>
+          <span data-site-text="profile.name">Your Name</span>
+        </p>
+        <a
+          data-site-link="links.resume"
+          href="/Srikarran_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume PDF
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

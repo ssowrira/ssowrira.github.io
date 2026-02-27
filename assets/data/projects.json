@@ -1,0 +1,131 @@
+[
+  {
+    "slug": "legged-adaptive-control",
+    "title": "Adaptive Locomotion Control for Disturbance-Rejecting Quadrupeds",
+    "summary": "Designed a hybrid model-based and learning-based controller in MuJoCo that recovers from pushes and uneven terrain in real time.",
+    "overview": "This project combines trajectory optimization with reinforcement learning residuals to improve recovery behaviors in legged locomotion. The full stack was prototyped in simulation before deployment-ready control interfaces were built.",
+    "tags": ["Robotics", "Control", "Simulation", "MuJoCo", "ML"],
+    "year": "2025",
+    "status": "Research Prototype",
+    "challenge": "Purely model-based locomotion degraded under unmodeled contact disturbances.",
+    "approach": "Built an MPC baseline and augmented it with a learned residual policy trained over randomized terrain and payload shifts.",
+    "outcomes": [
+      "Improved disturbance rejection by 35% over the baseline in randomized tests.",
+      "Reduced fall rate during slope transitions from 18% to 6%.",
+      "Packaged repeatable benchmark scripts for controller regression testing."
+    ],
+    "tools": ["MuJoCo", "Python", "C++", "ROS2"],
+    "links": {
+      "repo": "https://github.com/your-github-handle/legged-adaptive-control",
+      "paper": "https://example.com/legged-adaptive-control-paper"
+    },
+    "featured": true,
+    "detailPage": "/projects/legged-adaptive-control.html"
+  },
+  {
+    "slug": "ros2-fleet-digital-twin",
+    "title": "ROS2 Fleet Digital Twin for Multi-Robot Coordination",
+    "summary": "Created a simulation-backed digital twin to test task allocation and collision-aware routing for a heterogeneous mobile manipulator fleet.",
+    "overview": "A ROS2-native digital twin enabled rapid evaluation of dispatcher policies and failure recovery workflows before field deployment. The environment included realistic latency and sensor-dropout models.",
+    "tags": ["Robotics", "ROS2", "Simulation", "Control"],
+    "year": "2024",
+    "status": "Deployed Internally",
+    "challenge": "Hardware-only testing slowed iteration and hid scheduler edge cases.",
+    "approach": "Implemented a synchronized twin with rosbag replay, fault injection, and planner-in-the-loop evaluation.",
+    "outcomes": [
+      "Cut integration test cycle time from multiple days to a single afternoon.",
+      "Identified deadlock scenarios before live rollout.",
+      "Improved fleet throughput by 22% with revised allocation heuristics."
+    ],
+    "tools": ["ROS2", "Gazebo", "Docker", "Python"],
+    "links": {
+      "repo": "https://github.com/your-github-handle/ros2-fleet-digital-twin"
+    },
+    "featured": true
+  },
+  {
+    "slug": "precice-fsi-gripper",
+    "title": "preCICE-Coupled FSI Model for Soft Gripper Design",
+    "summary": "Built a preCICE coupling workflow between CFD and structural solvers to evaluate compliance and grasp stability for soft robotic fingers.",
+    "overview": "The project established a reusable co-simulation pipeline for fluid-structure interaction analysis in soft end-effectors. Parameter sweeps were automated to map geometry-performance tradeoffs.",
+    "tags": ["Robotics", "Simulation", "preCICE", "Control"],
+    "year": "2025",
+    "status": "In Progress",
+    "challenge": "Single-physics simulations under-predicted deformation during fast grasp maneuvers.",
+    "approach": "Linked OpenFOAM and CalculiX through preCICE and integrated optimization scripts for geometry tuning.",
+    "outcomes": [
+      "Established reproducible FSI benchmark cases for gripper design decisions.",
+      "Reduced over-compliance failure cases by 28% in simulation.",
+      "Documented coupling stability settings for future projects."
+    ],
+    "tools": ["preCICE", "OpenFOAM", "CalculiX", "Bash"],
+    "links": {
+      "paper": "https://example.com/precice-fsi-gripper"
+    },
+    "featured": true,
+    "detailPage": "/projects/precice-fsi-gripper.html"
+  },
+  {
+    "slug": "vision-bin-picking-policy",
+    "title": "Vision-Guided Bin Picking with Uncertainty-Aware Grasp Ranking",
+    "summary": "Trained a grasp scoring model that combines depth imagery and kinematic feasibility checks for robust cluttered bin retrieval.",
+    "overview": "This effort fused classical grasp candidate generation with uncertainty-calibrated ML ranking. Runtime checks filtered out low-confidence grasp actions before execution.",
+    "tags": ["Robotics", "ML", "ROS2", "Control"],
+    "year": "2023",
+    "status": "Pilot",
+    "challenge": "Occlusions and reflective surfaces led to high grasp miss rates.",
+    "approach": "Added uncertainty calibration, active viewpoint updates, and post-grasp verification triggers.",
+    "outcomes": [
+      "Raised first-attempt success from 62% to 81%.",
+      "Reduced recovery actions and cycle interruptions.",
+      "Created a dataset curation tool for failed-grasp replay."
+    ],
+    "tools": ["PyTorch", "ROS2", "OpenCV"],
+    "links": {
+      "repo": "https://github.com/your-github-handle/vision-bin-picking-policy"
+    },
+    "featured": false
+  },
+  {
+    "slug": "teleop-shared-autonomy",
+    "title": "Shared-Autonomy Teleoperation for Dexterous Manipulation",
+    "summary": "Developed a haptic teleoperation stack with assistive autonomy for precision assembly tasks under delayed network conditions.",
+    "overview": "A shared-autonomy controller blended operator intent with constrained motion planning to reduce errors in narrow-clearance assembly.",
+    "tags": ["Robotics", "Control", "Simulation", "MuJoCo"],
+    "year": "2022",
+    "status": "Completed",
+    "challenge": "Pure teleop became unstable when delays exceeded 120 ms.",
+    "approach": "Built predictive intent filters and autonomy handoff logic with tunable authority weighting.",
+    "outcomes": [
+      "Reduced assembly alignment errors by 31%.",
+      "Maintained task completion consistency under variable latency.",
+      "Published evaluation scripts for controller ablation studies."
+    ],
+    "tools": ["MuJoCo", "C++", "ROS2"],
+    "links": {
+      "paper": "https://example.com/shared-autonomy-teleop"
+    },
+    "featured": false
+  },
+  {
+    "slug": "soft-robot-model-reduction",
+    "title": "Model Reduction Pipeline for Fast Soft Robot Simulation",
+    "summary": "Created a reduced-order modeling workflow that preserves key dynamics for faster controller-in-the-loop experimentation.",
+    "overview": "The project combined data-driven basis extraction with solver-aware reduction constraints to accelerate closed-loop simulation of compliant systems.",
+    "tags": ["Robotics", "Simulation", "ML", "preCICE"],
+    "year": "2024",
+    "status": "Research",
+    "challenge": "High-fidelity models were too slow for iterative controller tuning.",
+    "approach": "Used proper orthogonal decomposition and online correction models to preserve response quality.",
+    "outcomes": [
+      "Achieved 8x faster simulations with acceptable accuracy drift.",
+      "Enabled controller sweeps that were previously computationally prohibitive.",
+      "Added validation harnesses against full-order references."
+    ],
+    "tools": ["Python", "NumPy", "preCICE", "MATLAB"],
+    "links": {
+      "repo": "https://github.com/your-github-handle/soft-robot-model-reduction"
+    },
+    "featured": false
+  }
+]

@@ -282,6 +282,23 @@ img {
   align-content: start;
 }
 
+.headshot-panel,
+.headshot-card {
+  padding: 0.9rem;
+}
+
+.profile-headshot {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 0.85rem;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
 .metric {
   padding-bottom: 0.75rem;
   border-bottom: 1px dashed var(--border);

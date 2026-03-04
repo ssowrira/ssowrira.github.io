@@ -25,6 +25,12 @@
     });
   }
 
+  function removeLegacyAboutNavLinks() {
+    document.querySelectorAll('.site-nav a[href="/about.html"], .site-nav a[href="about.html"]').forEach(function (link) {
+      link.remove();
+    });
+  }
+
   function setTheme(mode) {
     document.documentElement.setAttribute("data-theme", mode);
     localStorage.setItem("theme", mode);
@@ -88,6 +94,7 @@
   }
 
   bindSiteText();
+  removeLegacyAboutNavLinks();
   initThemeToggle();
   initNavToggle();
   closeMenuOnResize();

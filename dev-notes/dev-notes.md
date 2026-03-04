@@ -50,6 +50,36 @@ For every update:
 
 ## Change Log
 
+### 2026-03-03 | v1.3.1 | Temporarily Unpublished Projects and Hobbies
+- Type: `refactor`
+- Area: Home | Projects | Hobbies | Global
+- Files: `index.html`, `contact.html`, `projects.html`, `project.html`, `projects/legged-adaptive-control.html`, `projects/precice-fsi-gripper.html`, `hobbies.html`, `assets/js/main.js`, `dev-notes/dev-notes.md`
+- Summary: Hid Projects and Hobbies from global navigation, removed the Home Featured Projects section, and added production-time redirects for Projects/Hobbies pages.
+- Impact: Public navigation now focuses on Home and Contact, and hidden sections redirect to Home on deployed environments.
+- Verification: Confirmed nav links were removed in all HTML pages, Featured Projects was removed from Home, and redirect/noindex logic was added to hidden pages.
+- Commit: `uncommitted`
+- Follow-up: Re-enable by restoring nav links and removing redirect scripts when ready to publish those pages.
+
+### 2026-03-03 | v1.3.0 | Expanded Research Profile Sections Across Home and Hobbies
+- Type: `content`
+- Area: Home | Hobbies
+- Files: `index.html`, `hobbies.html`, `dev-notes/dev-notes.md`
+- Summary: Reworked Home and Hobbies content to reflect updated research interests, current work streams, technical expertise, and beyond-research narrative.
+- Impact: Visitors now see a clearer research identity with dedicated sections for interests, active projects, technical capabilities, and personal context.
+- Verification: Confirmed updated section headings and copy in `index.html` and `hobbies.html` match the provided content themes and structure.
+- Commit: `uncommitted`
+- Follow-up: Optionally align `projects.json` project summaries with the same current-work terminology.
+
+### 2026-03-03 | v1.2.2 | Expanded Home Bio Content
+- Type: `content`
+- Area: Home | Global
+- Files: `assets/js/site-config.js`, `index.html`, `dev-notes/dev-notes.md`
+- Summary: Updated profile bio content and structure by expanding the home introduction into multiple detailed bio paragraphs sourced from `SITE_CONFIG`.
+- Impact: The Home page now communicates a clearer and more complete research narrative, including robotics focus areas and current FibroScan-related work.
+- Verification: Confirmed `profile.shortBio`, `profile.bio1`, `profile.bio2`, and `profile.bio3` are defined in `site-config.js` and referenced by `data-site-text` bindings in `index.html`.
+- Commit: `uncommitted`
+- Follow-up: Consider removing unused `profile.longerBio` if no longer needed on any page.
+
 ### 2026-03-03 | v1.2.1 | Prevent Legacy About Nav Link from Reappearing
 - Type: `fix`
 - Area: Global

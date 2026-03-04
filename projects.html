@@ -8,6 +8,16 @@
       name="description"
       content="Filterable robotics project portfolio spanning control, simulation, ML, ROS2, MuJoCo, and preCICE."
     />
+    <meta name="robots" content="noindex, nofollow" />
+    <script>
+      (function () {
+        var host = window.location.hostname;
+        var isLocal = host === "localhost" || host === "127.0.0.1";
+        if (!isLocal) {
+          window.location.replace("/index.html");
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -36,8 +46,6 @@
         </button>
         <nav class="site-nav" id="site-nav-projects" data-open="false" aria-label="Primary">
           <a href="/index.html">Home</a>
-          <a href="/projects.html" aria-current="page">Projects</a>
-          <a href="/hobbies.html">Hobbies</a>
           <a href="/contact.html">Contact</a>
         </nav>
         <div class="nav-actions">

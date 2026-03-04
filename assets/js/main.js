@@ -25,10 +25,14 @@
     });
   }
 
-  function removeLegacyAboutNavLinks() {
-    document.querySelectorAll('.site-nav a[href="/about.html"], .site-nav a[href="about.html"]').forEach(function (link) {
-      link.remove();
-    });
+  function removeHiddenNavLinks() {
+    document
+      .querySelectorAll(
+        '.site-nav a[href="/about.html"], .site-nav a[href="about.html"], .site-nav a[href="/projects.html"], .site-nav a[href="projects.html"], .site-nav a[href="/hobbies.html"], .site-nav a[href="hobbies.html"]'
+      )
+      .forEach(function (link) {
+        link.remove();
+      });
   }
 
   function setTheme(mode) {
@@ -94,7 +98,7 @@
   }
 
   bindSiteText();
-  removeLegacyAboutNavLinks();
+  removeHiddenNavLinks();
   initThemeToggle();
   initNavToggle();
   closeMenuOnResize();

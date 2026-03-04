@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Project Detail | Portfolio</title>
     <meta name="description" content="Robotics project detail page." />
+    <meta name="robots" content="noindex, nofollow" />
+    <script>
+      (function () {
+        var host = window.location.hostname;
+        var isLocal = host === "localhost" || host === "127.0.0.1";
+        if (!isLocal) {
+          window.location.replace("/index.html");
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,8 +43,6 @@
         </button>
         <nav class="site-nav" id="site-nav-project-detail" data-open="false" aria-label="Primary">
           <a href="/index.html">Home</a>
-          <a href="/projects.html" aria-current="page">Projects</a>
-          <a href="/hobbies.html">Hobbies</a>
           <a href="/contact.html">Contact</a>
         </nav>
         <div class="nav-actions">
@@ -57,7 +65,7 @@
     <main id="main-content" class="page-main">
       <section class="section">
         <div class="container">
-          <p style="margin-bottom: 0.8rem"><a class="text-link" href="/projects.html">&larr; Back to Projects</a></p>
+          <p style="margin-bottom: 0.8rem"><a class="text-link" href="/index.html">&larr; Back to Home</a></p>
         </div>
       </section>
 

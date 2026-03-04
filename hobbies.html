@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hobbies | Portfolio</title>
     <meta name="description" content="Interests and hobbies page for a robotics portfolio." />
+    <meta name="robots" content="noindex, nofollow" />
+    <script>
+      (function () {
+        var host = window.location.hostname;
+        var isLocal = host === "localhost" || host === "127.0.0.1";
+        if (!isLocal) {
+          window.location.replace("/index.html");
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,8 +42,6 @@
         </button>
         <nav class="site-nav" id="site-nav-hobbies" data-open="false" aria-label="Primary">
           <a href="/index.html">Home</a>
-          <a href="/projects.html">Projects</a>
-          <a href="/hobbies.html" aria-current="page">Hobbies</a>
           <a href="/contact.html">Contact</a>
         </nav>
         <div class="nav-actions">
@@ -58,25 +66,35 @@
         <div class="container">
           <h1>Hobbies & Interests</h1>
           <p class="section-intro" style="margin-top: 0.7rem">
-            Outside the lab, I enjoy activities that keep me curious and hands-on.
+            Outside of research, I enjoy cooking, music, and creative technical projects, and I spend time thinking
+            about the broader societal impact of robotics.
           </p>
           <div class="card-grid">
             <article class="content-card">
-              <h3>Hardware Tinkering</h3>
+              <h3>Cooking</h3>
               <p>
-                Building small prototypes, custom fixtures, and quick test rigs for ideas that do not need a full
-                research cycle.
+                I enjoy experimenting with recipes and techniques that require precision, iteration, and creativity.
               </p>
             </article>
             <article class="content-card">
-              <h3>Open-Source Tooling</h3>
+              <h3>Music</h3>
               <p>
-                Contributing scripts and documentation that make robotics experimentation easier for new team members.
+                Music is a consistent source of focus and inspiration, especially when working through complex ideas.
               </p>
             </article>
             <article class="content-card">
-              <h3>Outdoors</h3>
-              <p>Long walks, hiking, and cycling help me reset and think through difficult engineering problems.</p>
+              <h3>Creative Technical Projects</h3>
+              <p>
+                I enjoy exploring side projects that combine software, hardware, and design in ways that are practical
+                and fun.
+              </p>
+            </article>
+            <article class="content-card">
+              <h3>Societal Impact of Robotics</h3>
+              <p>
+                I am interested in how intelligent machines will shape healthcare, industry, and everyday life, and
+                how we can design systems responsibly.
+              </p>
             </article>
           </div>
         </div>

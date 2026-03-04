@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <script src="/assets/js/site-config.js" defer></script>
     <script src="/assets/js/main.js" defer></script>
-    <script src="/assets/js/home-projects.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -36,8 +35,6 @@
         </button>
         <nav class="site-nav" id="site-nav-home" data-open="false" aria-label="Primary">
           <a href="/index.html" aria-current="page">Home</a>
-          <a href="/projects.html">Projects</a>
-          <a href="/hobbies.html">Hobbies</a>
           <a href="/contact.html">Contact</a>
         </nav>
         <div class="nav-actions">
@@ -65,7 +62,13 @@
             <h1 data-site-text="profile.name">Your Name</h1>
             <p class="role" data-site-text="profile.role">Your role</p>
             <p class="bio" data-site-text="profile.shortBio">Short bio goes here.</p>
-            <p class="bio" style="margin-top: 0.6rem" data-site-text="profile.longerBio">
+            <p class="bio" style="margin-top: 0.6rem" data-site-text="profile.bio1">
+              Longer bio goes here.
+            </p>
+            <p class="bio" style="margin-top: 0.6rem" data-site-text="profile.bio2">
+              Longer bio goes here.
+            </p>
+            <p class="bio" style="margin-top: 0.6rem" data-site-text="profile.bio3">
               Longer bio goes here.
             </p>
             <div class="cta-row" aria-label="Primary actions">
@@ -117,16 +120,19 @@
 
             <article class="panel metrics" aria-label="Research highlights">
               <div class="metric">
-                <strong>Research Focus</strong>
-                <span>Robotic control, simulation-driven design, and sim-to-real transfer.</span>
+                <strong>Research Interests</strong>
+                <span>
+                  Robotic manipulation, force and impedance control, contact-rich robotics, and robot-assisted medical
+                  systems.
+                </span>
               </div>
               <div class="metric">
-                <strong>Tooling</strong>
-                <span>ROS2, MuJoCo, preCICE, optimization workflows, and ML pipelines.</span>
+                <strong>Current Work</strong>
+                <span>Robot-assisted FibroScan, MuJoCo-based simulation pipelines, and multi-physics modeling.</span>
               </div>
               <div class="metric">
-                <strong>Collaboration</strong>
-                <span>Cross-disciplinary work with mechanical, controls, and software teams.</span>
+                <strong>Focus</strong>
+                <span>Autonomous and intelligent systems for precise physical interaction in real-world settings.</span>
               </div>
             </article>
           </aside>
@@ -136,37 +142,42 @@
       <section class="section">
         <div class="container layout-two">
           <article class="content-card">
-            <h2 style="margin-bottom: 0.75rem">How I Work</h2>
-            <p>
-              I enjoy building end-to-end systems, from mechanical modeling and simulation setup to controller design,
-              evaluation, and deployment workflows. I prioritize reproducible tooling so collaborators can test ideas
-              quickly and safely.
-            </p>
+            <h2 style="margin-bottom: 0.75rem">Research Interests</h2>
+            <ul>
+              <li>Robotic Manipulation</li>
+              <li>Force and Impedance Control</li>
+              <li>Robot-Assisted Medical Systems</li>
+              <li>Haptic and Contact-Rich Robotics</li>
+              <li>Simulation for Robotics (MuJoCo, multi-physics modeling)</li>
+              <li>Learning from Demonstration and Teleoperation</li>
+              <li>Autonomous and Intelligent Robotic Systems</li>
+            </ul>
             <p style="margin-top: 0.75rem">
-              My work combines model-based methods with learning-based approaches so robotic systems can transfer more
-              reliably from simulation to deployment.
+              I am particularly interested in robotics problems where precise physical interaction with the
+              environment is essential, such as medical robotics, robotic palpation, and contact-sensitive
+              manipulation.
             </p>
           </article>
 
           <aside class="stack">
             <article class="content-card">
-              <h3>Core Skills</h3>
+              <h3>Technical Expertise</h3>
               <ul>
-                <li><strong>Robotics:</strong> Motion planning, manipulation, legged locomotion, shared autonomy</li>
-                <li><strong>Simulation:</strong> MuJoCo, Gazebo, FSI co-simulation, digital twins</li>
-                <li><strong>Control:</strong> MPC, optimal control, estimation, robust feedback design</li>
-                <li><strong>ML:</strong> Reinforcement learning, representation learning, uncertainty modeling</li>
-                <li><strong>Tools:</strong> ROS2, Python, C++, Docker, GitHub Actions</li>
+                <li>Python, C++, and MATLAB</li>
+                <li>MuJoCo simulation environments</li>
+                <li>Robotics middleware and modeling tools</li>
+                <li>Force/torque sensing and contact modeling</li>
+                <li>Control system design for robotic manipulators</li>
               </ul>
             </article>
 
             <article class="content-card">
-              <h3>Education</h3>
-              <ul>
-                <li><strong>PhD, Mechanical Engineering</strong> - Stevens Institute of Technology, 2024-present</li>
-                <li><strong>MS, Mechanical Engineering</strong> - Stevens Institute of Technology, 2024</li>
-                <li><strong>BS, Mechanical Engineering</strong> - Case Western Reserve University, 2019</li>
-              </ul>
+              <h3>Beyond Research</h3>
+              <p>
+                Outside of research, I enjoy cooking, music, and exploring creative technical projects. I am also
+                interested in the broader societal impact of robotics and the role intelligent machines will play in
+                healthcare, industry, and everyday life.
+              </p>
             </article>
           </aside>
         </div>
@@ -174,14 +185,35 @@
 
       <section class="section">
         <div class="container">
-          <h2>Featured Projects</h2>
+          <h2>Current Work</h2>
           <p class="section-intro">
-            Selected research and engineering efforts across robotics, simulation, and control.
+            Ongoing projects focused on medical robotics, high-fidelity simulation, and contact-aware manipulation.
           </p>
-          <div id="home-projects-grid" class="card-grid" aria-live="polite"></div>
-          <p style="margin-top: 0.9rem">
-            <a class="text-link" href="/projects.html">Browse all projects</a>
-          </p>
+          <div class="card-grid">
+            <article class="content-card">
+              <h3>Robot-Assisted FibroScan</h3>
+              <p>
+                Development of a robotic platform capable of performing vibration-controlled transient elastography
+                (VCTE) for liver diagnostics. The system integrates robotic manipulation, force control, and probe
+                vibration dynamics to improve measurement consistency and support future autonomous diagnostics.
+              </p>
+            </article>
+            <article class="content-card">
+              <h3>Robotic Simulation and Multi-Physics Modeling</h3>
+              <p>
+                Development of simulation pipelines using MuJoCo to model robotic grasping and probe interactions.
+                This includes generating nodal displacement data for downstream physical modeling tools and integrating
+                multi-physics frameworks such as preCICE.
+              </p>
+            </article>
+            <article class="content-card">
+              <h3>Contact-Aware Robotic Systems</h3>
+              <p>
+                Exploring methods for controlling robotic manipulators during contact-rich tasks, including
+                impedance-based control strategies and force feedback integration.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 

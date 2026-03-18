@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact | Portfolio</title>
-    <meta name="description" content="Contact information and professional links." />
+    <title>Publications & News | Portfolio</title>
+    <meta
+      name="description"
+      content="Selected robotics publications and media features for Srikarran Sowrirajan."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,7 +18,7 @@
     <script src="/assets/js/site-config.js" defer></script>
     <script src="/assets/js/main.js" defer></script>
   </head>
-  <body>
+  <body class="publications-page">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header">
@@ -26,14 +29,14 @@
           type="button"
           data-nav-toggle
           aria-expanded="false"
-          aria-controls="site-nav-contact"
+          aria-controls="site-nav-publications"
         >
           Menu
         </button>
-        <nav class="site-nav" id="site-nav-contact" data-open="false" aria-label="Primary">
+        <nav class="site-nav" id="site-nav-publications" data-open="false" aria-label="Primary">
           <a href="/index.html">Home</a>
-          <a href="/publications.html">Publications</a>
-          <a href="/contact.html" aria-current="page">Contact</a>
+          <a href="/publications.html" aria-current="page">Publications</a>
+          <a href="/contact.html">Contact</a>
         </nav>
         <div class="nav-actions">
           <a
@@ -54,73 +57,60 @@
 
     <main id="main-content" class="page-main">
       <section class="section">
-        <div class="container layout-two">
+        <div class="container">
           <article class="content-card">
-            <h1 style="margin-bottom: 0.8rem">Contact</h1>
-            <p style="margin-bottom: 0.8rem; color: var(--text-muted)">
-              The quickest way to reach me is by email. I also respond on LinkedIn and monitor GitHub regularly.
+            <h1 class="page-title">Publications</h1>
+            <ol class="publication-list" aria-label="Publication list">
+              <li>
+                <p class="publication-title">Nasiri E, Sowrirajan S, Wang L.</p>
+                <p>
+                  Teleoperation in robot-assisted MIS with adaptive RCM via admittance control: E. Nasiri et al.
+                  <em>International Journal of Intelligent Robotics and Applications</em>. 2024 Dec;8(4):827-39.
+                </p>
+              </li>
+              <li>
+                <p class="publication-title">Sitler J, Sowrirajan S, Englot B, Wang L.</p>
+                <p>
+                  A Bimanual Teleoperation Framework for Light Duty Underwater Vehicle-Manipulator Systems. In
+                  <em>2024 21st International Conference on Ubiquitous Robots (UR)</em>. 2024 Jun 24; pp. 01-08. IEEE.
+                </p>
+              </li>
+            </ol>
+            <p class="publication-note">
+              For a complete and continuously updated list:
+              <a
+                data-site-link="links.scholar"
+                href="https://scholar.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Scholar profile
+              </a>
             </p>
-            <ul class="contact-list" aria-label="Contact links">
-              <li>
-                <a class="text-link" data-site-link="links.email" href="mailto:srikarran@example.com">
-                  <span data-site-text="contact.email">srikarran@example.com</span>
-                </a>
-              </li>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <article class="content-card">
+            <h2 class="section-heading">News Features</h2>
+            <ul class="news-list" aria-label="News feature list">
               <li>
                 <a
-                  class="text-link"
-                  data-site-link="links.linkedin"
-                  href="https://www.linkedin.com"
+                  class="news-link"
+                  href="https://www.stevens.edu/news/stevens-researcher-long-wang-advances-robotic-hand-technology-for-combat"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  LinkedIn
+                  Stevens Researcher Long Wang Advances Robotic Hand Technology for Combat Casualty Care
                 </a>
-              </li>
-              <li>
-                <a
-                  class="text-link"
-                  data-site-link="links.github"
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a
-                  class="text-link"
-                  data-site-link="links.scholar"
-                  href="https://scholar.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Google Scholar
-                </a>
-              </li>
-              <li>
-                <a
-                  class="text-link"
-                  data-site-link="links.resume"
-                  href="/Srikarran_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Resume PDF
-                </a>
+                <p>
+                  Stevens Institute of Technology news feature highlighting recent work in robotic hand technologies.
+                </p>
               </li>
             </ul>
           </article>
-
-          <aside class="content-card">
-            <h3 style="margin-bottom: 0.6rem">Availability</h3>
-            <ul>
-              <li>Research collaboration discussions</li>
-              <li>Internship and full-time robotics roles</li>
-              <li>Speaking and mentoring opportunities</li>
-            </ul>
-          </aside>
         </div>
       </section>
     </main>

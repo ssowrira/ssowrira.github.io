@@ -13,7 +13,19 @@ Fields to edit:
 - `profile.name`, `profile.role`, `profile.shortBio`, `profile.longerBio`
 - `contact.email`
 - `links.resume` (already set to `/Srikarran_Resume.pdf`)
-- `links.email`, `links.linkedin`, `links.github`
+- `links.email`, `links.linkedin`, `links.github`, `links.scholar`
+
+## Add or Edit Publications and News
+
+Update one file:
+
+- `publications.html`
+
+Use this page to:
+
+- List selected publications
+- Add institutional/news feature links
+- Link out to full publication history on Google Scholar
 
 ## Add or Edit Projects
 

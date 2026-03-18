@@ -492,6 +492,107 @@ img {
   font-weight: 700;
 }
 
+.publication-list,
+.news-list {
+  margin: 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.publication-list li,
+.news-list li {
+  color: var(--text-muted);
+}
+
+.publication-title {
+  color: var(--text);
+  font-weight: 700;
+  margin-bottom: 0.22rem;
+}
+
+.news-link {
+  color: var(--accent-strong);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.news-link:hover {
+  text-decoration: underline;
+}
+
+.publications-page .section {
+  margin-top: 1.75rem;
+}
+
+.publications-page .section:first-of-type {
+  margin-top: 1.4rem;
+}
+
+.publications-page .content-card {
+  padding: clamp(1rem, 2.1vw, 1.25rem);
+}
+
+.publications-page .page-title {
+  font-size: clamp(1.75rem, 3.4vw, 2.3rem);
+  margin-bottom: 0.55rem;
+}
+
+.publications-page .page-lead {
+  margin-bottom: 0.9rem;
+  max-width: 58ch;
+}
+
+.publications-page .section-heading {
+  font-size: clamp(1.25rem, 2.3vw, 1.6rem);
+  margin-bottom: 0.72rem;
+}
+
+.publications-page .publication-list {
+  gap: 1rem;
+  padding-left: 1.3rem;
+}
+
+.publications-page .publication-list li {
+  padding-left: 0.1rem;
+}
+
+.publications-page .publication-list p {
+  line-height: 1.55;
+  max-width: 74ch;
+}
+
+.publications-page .publication-title {
+  font-size: 1rem;
+  letter-spacing: 0.005em;
+  margin-bottom: 0.26rem;
+}
+
+.publications-page .publication-list em {
+  color: var(--text);
+}
+
+.publications-page .publication-note {
+  margin-top: 0.88rem;
+}
+
+.publications-page .news-list {
+  list-style: none;
+  padding-left: 0;
+  gap: 0.78rem;
+}
+
+.publications-page .news-list li {
+  border-left: 3px solid var(--border);
+  padding-left: 0.85rem;
+}
+
+.publications-page .news-link {
+  display: inline-block;
+  line-height: 1.35;
+  margin-bottom: 0.25rem;
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   color: var(--text-muted);
@@ -570,5 +671,13 @@ img {
   .footer-inner {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .publications-page .content-card {
+    padding: 0.95rem;
+  }
+
+  .publications-page .publication-list {
+    padding-left: 1.1rem;
   }
 }

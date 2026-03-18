@@ -20,6 +20,7 @@ window.SITE_CONFIG = {
     resume: "/Srikarran_Resume.pdf",
     email: "mailto:srikarran.sowrirajan@gmail.com",
     linkedin: "https://www.linkedin.com/in/srikarran",
-    github: "https://github.com/ssowrira"
+    github: "https://github.com/ssowrira",
+    scholar: "https://scholar.google.com/citations?user=3_qsnQcAAAAJ&hl=en&oi=ao"
   }
 };

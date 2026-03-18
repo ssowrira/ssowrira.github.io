@@ -50,6 +50,56 @@ For every update:
 
 ## Change Log
 
+### 2026-03-18 | v1.4.4 | Restored Scholar Link Note on Publications Page
+- Type: `content`
+- Area: Global
+- Files: `publications.html`, `dev-notes/dev-notes.md`
+- Summary: Restored the "For a complete and continuously updated list" Google Scholar link block beneath the publications list.
+- Impact: Visitors can again navigate directly from the publications list to the full Scholar profile.
+- Verification: Confirmed `publication-note` block with `data-site-link="links.scholar"` is present in `publications.html`.
+- Commit: `uncommitted`
+- Follow-up: `none`
+
+### 2026-03-18 | v1.4.3 | Removed Publications Intro and Highlights Blocks
+- Type: `content`
+- Area: Global
+- Files: `publications.html`, `dev-notes/dev-notes.md`
+- Summary: Removed the top in-page "Publications & News" intro card and the adjacent Highlights card from the Publications page.
+- Impact: The page now starts directly with publication entries and the news features list, with less visual clutter.
+- Verification: Confirmed the intro/highlights section markup was removed and the page heading now begins at the Publications section.
+- Commit: `uncommitted`
+- Follow-up: `none`
+
+### 2026-03-18 | v1.4.2 | Corrected News Feature Article Title
+- Type: `content`
+- Area: Global
+- Files: `publications.html`, `dev-notes/dev-notes.md`
+- Summary: Updated the Stevens news feature link text to the full official article title including "Combat Casualty Care."
+- Impact: Visitors now see the exact published article title in the News Features section.
+- Verification: Confirmed updated title string in `publications.html` via repository text search.
+- Commit: `uncommitted`
+- Follow-up: `none`
+
+### 2026-03-18 | v1.4.1 | Refined Publications Page Spacing and Typography
+- Type: `design`
+- Area: Global
+- Files: `publications.html`, `assets/css/styles.css`, `dev-notes/dev-notes.md`
+- Summary: Converted Publications page inline presentation styles to reusable classes and added page-scoped spacing/typography refinements.
+- Impact: Publications and news content now reads more cleanly with tighter section rhythm, stronger heading hierarchy, and clearer citation formatting on desktop and mobile.
+- Verification: Verified updated HTML class hooks and served `publications.html` locally (`python3 -m http.server`) to confirm 200 response and presence of updated class markers.
+- Commit: `uncommitted`
+- Follow-up: `none`
+
+### 2026-03-17 | v1.4.0 | Added Publications and News Page
+- Type: `feature`
+- Area: Home | Contact | Global
+- Files: `publications.html`, `index.html`, `contact.html`, `projects.html`, `project.html`, `hobbies.html`, `projects/legged-adaptive-control.html`, `projects/precice-fsi-gripper.html`, `assets/css/styles.css`, `assets/js/site-config.js`, `README.md`, `dev-notes/dev-notes.md`
+- Summary: Added a dedicated Publications and News page with listed publications, a featured Stevens article link, and Google Scholar integration.
+- Impact: Visitors can now access publications/news from the main navigation and view curated citation content in one place.
+- Verification: Verified navigation links across pages, checked Scholar/news URL bindings in markup, and reviewed updated styles/classes for publication/news list rendering.
+- Commit: `uncommitted`
+- Follow-up: `none`
+
 ### 2026-03-03 | v1.3.1 | Temporarily Unpublished Projects and Hobbies
 - Type: `refactor`
 - Area: Home | Projects | Hobbies | Global

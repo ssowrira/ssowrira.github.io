@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Man City Takeover Analysis | Srikarran Sowrirajan</title>
+    <meta
+      name="description"
+      content="A data analysis of Manchester City's Premier League record before and after the 2008 Abu Dhabi takeover, and who would have won their titles and European places without them."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/analysis.css" />
+    <script src="/assets/js/site-config.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/man-city-takeover.js" defer></script>
+  </head>
+  <body class="analysis-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a class="brand" href="/index.html" data-site-text="profile.shortName">Portfolio</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="site-nav-man-city"
+        >
+          Menu
+        </button>
+        <nav class="site-nav" id="site-nav-man-city" data-open="false" aria-label="Primary">
+          <a href="/index.html">Home</a>
+          <a href="/publications.html">Publications</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <a
+            class="button secondary small"
+            data-site-link="links.resume"
+            href="/Srikarran_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
+          <button class="button secondary small" type="button" data-theme-toggle aria-pressed="false">
+            Dark
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-main">
+      <section class="section">
+        <div class="analysis-narrow">
+          <p style="margin-bottom: 0.8rem"><a class="text-link" href="/index.html">&larr; Back to Home</a></p>
+          <article class="content-card analysis-hero">
+            <span class="eyebrow">Data analysis &middot; Premier League</span>
+            <h1>Manchester City and the Abu Dhabi takeover</h1>
+            <p class="analysis-lead">
+              How much did the September 2008 takeover change Manchester City's league record? And if you delete City's results
+              from the seasons they won, who would have won those titles and European places instead?
+            </p>
+            <div class="analysis-meta">
+              <ul class="tag-list" aria-label="Topics">
+                <li class="tag">Python</li>
+                <li class="tag">pandas</li>
+                <li class="tag">Sports analytics</li>
+              </ul>
+              <a class="text-link" href="/projects/man-city-takeover-notebook.html">View the full notebook with code &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Key numbers">
+        <div class="analysis-narrow stat-grid">
+          <div class="stat-tile">
+            <span class="stat-label">Average final position</span>
+            <span class="stat-value">13.5<span class="stat-arrow">&rarr;</span>2.4</span>
+            <span class="stat-note">11 seasons before the takeover vs 18 seasons after, to 2025-26</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-label">League titles</span>
+            <span class="stat-value">0<span class="stat-arrow">&rarr;</span>8</span>
+            <span class="stat-note">None before 2008-09; the first came in 2011-12</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-label">Titles the runner-up inherits</span>
+            <span class="stat-value">8 of 8</span>
+            <span class="stat-note">With City's results removed, the actual runner-up always finishes top</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-label">European places freed</span>
+            <span class="stat-value">17 of 18</span>
+            <span class="stat-note">Post-takeover seasons in which City finished in the top five</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="analysis-narrow">
+          <article class="content-card">
+            <h2>Background</h2>
+            <p>
+              Sheikh Mansour bin Zayed Al Nahyan's Abu Dhabi United Group agreed to buy Manchester City on
+              <strong>1 September 2008</strong>. That was transfer deadline day, and the 2008-09 season had already started
+              on 16 August. The deal completed on 23 September, but 1 September is the date the club and its fans mark as
+              the takeover, so 2008-09 is treated here as the first post-takeover season.
+            </p>
+            <p>
+              The analysis uses every Premier League result from 1992-93 to the end of 2025-26, merged from four public
+              sources into a single cleaned match table. Every league table on this page is rebuilt from individual match
+              results rather than taken from published standings, so the same code can recompute any season with a team
+              removed.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="analysis-narrow">
+          <article class="content-card">
+            <span class="section-number">Part 1</span>
+            <h2>From mid-table to a fixture in the top four</h2>
+            <p>
+              Before the takeover, City were a mid-table club that was relegated twice, in 1996 and 2001, and spent five
+              seasons outside the Premier League. Across their
+              11 top-flight seasons before 2008-09 they averaged <strong>13.5th</strong> and never finished higher
+              than 8th.
+            </p>
+            <p>
+              In the first season after the takeover they finished 10th. From 2010-11 onwards they have finished in the top
+              four every season, and won the league 8 times. Their average finish over the
+              18 post-takeover seasons, 2008-09 to 2025-26, is <strong>2.4</strong>.
+            </p>
+
+            <figure class="chart-figure">
+              <figcaption>
+                <span class="chart-title">Manchester City's final league position by season</span>
+                <span class="chart-subtitle">1st at the top. Hover over a season for details.</span>
+              </figcaption>
+              <ul class="chart-legend">
+                <li><span class="legend-swatch" style="background: var(--text-muted); opacity: 0.2"></span>Before the takeover, or outside the Premier League</li>
+              </ul>
+              <div class="chart-frame" id="chart-positions"></div>
+            </figure>
+
+            <details>
+              <summary>Show the table of positions by season</summary>
+              <div class="table-scroll"><table class="data-table"><caption>Manchester City&#x27;s final position in every Premier League season in the data. 1996-97 to 1999-00 and 2001-02 are missing because City were outside the Premier League.</caption><thead><tr><th scope="col">Season</th><th scope="col">Position</th><th scope="col" class="num">Teams</th><th scope="col" class="num">Points</th><th scope="col">Note</th></tr></thead><tbody><tr><th scope="row">1992-93</th><td>9th</td><td class="num">22</td><td class="num">57</td><td></td></tr><tr><th scope="row">1993-94</th><td>16th</td><td class="num">22</td><td class="num">45</td><td></td></tr><tr><th scope="row">1994-95</th><td>17th</td><td class="num">22</td><td class="num">49</td><td></td></tr><tr><th scope="row">1995-96</th><td>18th</td><td class="num">20</td><td class="num">38</td><td></td></tr><tr><th scope="row">2000-01</th><td>18th</td><td class="num">20</td><td class="num">34</td><td></td></tr><tr><th scope="row">2002-03</th><td>9th</td><td class="num">20</td><td class="num">51</td><td></td></tr><tr><th scope="row">2003-04</th><td>16th</td><td class="num">20</td><td class="num">41</td><td></td></tr><tr><th scope="row">2004-05</th><td>8th</td><td class="num">20</td><td class="num">52</td><td></td></tr><tr><th scope="row">2005-06</th><td>15th</td><td class="num">20</td><td class="num">43</td><td></td></tr><tr><th scope="row">2006-07</th><td>14th</td><td class="num">20</td><td class="num">42</td><td></td></tr><tr><th scope="row">2007-08</th><td>9th</td><td class="num">20</td><td class="num">55</td><td></td></tr><tr><th scope="row">2008-09</th><td>10th</td><td class="num">20</td><td class="num">50</td><td>Takeover season</td></tr><tr><th scope="row">2009-10</th><td>5th</td><td class="num">20</td><td class="num">67</td><td></td></tr><tr><th scope="row">2010-11</th><td>3rd</td><td class="num">20</td><td class="num">71</td><td></td></tr><tr><th scope="row">2011-12</th><td>1st</td><td class="num">20</td><td class="num">89</td><td></td></tr><tr><th scope="row">2012-13</th><td>2nd</td><td class="num">20</td><td class="num">78</td><td></td></tr><tr><th scope="row">2013-14</th><td>1st</td><td class="num">20</td><td class="num">86</td><td></td></tr><tr><th scope="row">2014-15</th><td>2nd</td><td class="num">20</td><td class="num">79</td><td></td></tr><tr><th scope="row">2015-16</th><td>4th</td><td class="num">20</td><td class="num">66</td><td></td></tr><tr><th scope="row">2016-17</th><td>3rd</td><td class="num">20</td><td class="num">78</td><td></td></tr><tr><th scope="row">2017-18</th><td>1st</td><td class="num">20</td><td class="num">100</td><td></td></tr><tr><th scope="row">2018-19</th><td>1st</td><td class="num">20</td><td class="num">98</td><td></td></tr><tr><th scope="row">2019-20</th><td>2nd</td><td class="num">20</td><td class="num">81</td><td></td></tr><tr><th scope="row">2020-21</th><td>1st</td><td class="num">20</td><td class="num">86</td><td></td></tr><tr><th scope="row">2021-22</th><td>1st</td><td class="num">20</td><td class="num">93</td><td></td></tr><tr><th scope="row">2022-23</th><td>1st</td><td class="num">20</td><td class="num">89</td><td></td></tr><tr><th scope="row">2023-24</th><td>1st</td><td class="num">20</td><td class="num">91</td><td></td></tr><tr><th scope="row">2024-25</th><td>3rd</td><td class="num">20</td><td class="num">71</td><td></td></tr><tr><th scope="row">2025-26</th><td>2nd</td><td class="num">20</td><td class="num">78</td><td></td></tr></tbody></table></div>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="analysis-narrow">
+          <article class="content-card">
+            <span class="section-number">Part 2</span>
+            <h2>The league table without Manchester City</h2>
+            <p>
+              To ask "who would have won without City?", each season's table is rebuilt as if City had never played. The
+              method drops every match City took part in, home and away, so each remaining club keeps only its results
+              against the other clubs. In a 20-team season that gives a 19-team table in which everyone has played 36
+              games instead of 38.
+            </p>
+            <p>
+              This is a small function that wraps the existing table builder. The only new step is filtering out both
+              sides of every fixture involving the excluded team.
+            </p>
+            <details>
+              <summary>Show the code</summary>
+              <pre><code>def league_table_excluding_team(team_matches, season, excluded_team):
+    """A season's table as if `excluded_team` had never played -- every other
+    team keeps only its matches against the remaining clubs."""
+    without = team_matches[
+        (team_matches["team"] != excluded_team)
+        &amp; (team_matches["opponent"] != excluded_team)
+    ]
+    return league_table(without, season)</code></pre>
+            </details>
+
+            <h3>Would anyone else have won the title?</h3>
+            <p>
+              Yes, and in every case it's the club that actually finished second. City won 8 Premier League titles
+              after the takeover. With their results removed, Manchester United and Liverpool would each have won three of
+              those, and Arsenal two.
+            </p>
+            <p>
+              The margins vary a lot. In 2011-12 City won the league on goal difference, and United had lost both derbies,
+              so taking City out leaves United's 89 points unchanged. In 2017-18 City's 100 points were 22 clear of what the
+              runner-up would have finished on.
+            </p>
+
+            <figure class="chart-figure">
+              <figcaption>
+                <span class="chart-title">City's points in each title season vs the would-be champion's points without City</span>
+                <span class="chart-subtitle">The would-be champion is the actual runner-up every time. Hover over a row for details.</span>
+              </figcaption>
+              <ul class="chart-legend">
+                <li><span class="legend-swatch swatch-series1 swatch-dot"></span>Manchester City (actual champions)</li>
+                <li><span class="legend-swatch swatch-neutral swatch-dot"></span>Champion without City (36 games)</li>
+              </ul>
+              <div class="chart-frame" id="chart-titles"></div>
+            </figure>
+            <p class="chart-caption">
+              The would-be champion played 2 fewer games once its matches against City are removed, so its total isn't
+              directly comparable with a 38-game season. The margin shows how far ahead City finished.
+            </p>
+
+            <details>
+              <summary>Show the table of title seasons</summary>
+              <div class="table-scroll"><table class="data-table"><caption>City&#x27;s title seasons. The champion without City is the actual runner-up every time.</caption><thead><tr><th scope="col">Season</th><th scope="col" class="num">City pts</th><th scope="col">Runner-up</th><th scope="col" class="num">Runner-up pts (38 games)</th><th scope="col" class="num">Runner-up pts without City (36 games)</th><th scope="col" class="num">Margin</th></tr></thead><tbody><tr><th scope="row">2011-12</th><td class="num">89</td><td>Manchester United</td><td class="num">89</td><td class="num">89</td><td class="num">0</td></tr><tr><th scope="row">2013-14</th><td class="num">86</td><td>Liverpool</td><td class="num">84</td><td class="num">81</td><td class="num">5</td></tr><tr><th scope="row">2017-18</th><td class="num">100</td><td>Manchester United</td><td class="num">81</td><td class="num">78</td><td class="num">22</td></tr><tr><th scope="row">2018-19</th><td class="num">98</td><td>Liverpool</td><td class="num">97</td><td class="num">96</td><td class="num">2</td></tr><tr><th scope="row">2020-21</th><td class="num">86</td><td>Manchester United</td><td class="num">74</td><td class="num">70</td><td class="num">16</td></tr><tr><th scope="row">2021-22</th><td class="num">93</td><td>Liverpool</td><td class="num">92</td><td class="num">90</td><td class="num">3</td></tr><tr><th scope="row">2022-23</th><td class="num">89</td><td>Arsenal</td><td class="num">84</td><td class="num">84</td><td class="num">5</td></tr><tr><th scope="row">2023-24</th><td class="num">91</td><td>Arsenal</td><td class="num">89</td><td class="num">85</td><td class="num">6</td></tr></tbody></table></div>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="analysis-narrow">
+          <article class="content-card">
+            <span class="section-number">Part 3</span>
+            <h2>Who inherits City's European place?</h2>
+            <p>
+              A top finish doesn't only decide the title. It also takes up a Champions League or Europa League place that
+              would otherwise go to someone else. Running the same without-City table for all 18 post-takeover
+              seasons shows who would have picked up that place.
+            </p>
+            <div class="callout">
+              <p>
+                <strong>Simplifying assumption.</strong> Qualification is based on league position alone, using the
+                modern rule of thumb: top four go to the Champions League, fifth to the Europa League. In reality, cup
+                winners also earn European places, and UEFA occasionally adds extra ones (England got a fifth Champions
+                League place in 2024-25). Neither is modelled here, so treat these results as what the league table alone
+                implies, not the confirmed European line-ups.
+              </p>
+            </div>
+            <p style="margin-top: 0.9rem">
+              City finished in the top five in 17 of those 18 seasons. The only exception was 2008-09, the
+              takeover season itself, when they finished 10th. In each of those 17 seasons, removing City frees
+              exactly one place, so exactly one extra club gets into Europe.
+            </p>
+            <p>
+              Usually the club directly below the European places is the one that moves up. The one exception is
+              2020-21.
+            </p>
+            <div class="callout">
+              <p><strong>The 2020-21 exception.</strong> Removing City doesn't take the same number of points off every
+              club: each one loses whatever it took from its two games against City. Leicester finished 5th, a point
+              ahead of West Ham, but they had beaten City 5-2 away, so they lose 3 points. West Ham had only drawn 1-1
+              with City, so they lose 1. Without City, West Ham jump from 6th to 4th and take the Champions League place.
+              Leicester, the next club in line, stay 5th, in the Europa League place they already had.</p>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <caption>2020-21, with and without City's results. Chelsea finish above West Ham on goal difference.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Club</th>
+                      <th scope="col">Actual finish</th>
+                      <th scope="col" class="num">Points taken off City</th>
+                      <th scope="col">Finish without City</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Chelsea</th><td>4th, 67 pts</td><td class="num">3</td><td>3rd, 64 pts</td></tr>
+                    <tr><th scope="row">Leicester City</th><td>5th, 66 pts</td><td class="num">3</td><td>5th, 63 pts</td></tr>
+                    <tr><th scope="row">West Ham United</th><td>6th, 65 pts</td><td class="num">1</td><td>4th, 64 pts</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p style="margin-top: 0.9rem">
+              Tottenham and Arsenal gain the most, with five extra European seasons each. Four of Tottenham's are in the
+              Champions League.
+            </p>
+
+            <figure class="chart-figure">
+              <figcaption>
+                <span class="chart-title">Extra European seasons each club would have had without City</span>
+                <span class="chart-subtitle">18 seasons, 2008-09 to 2025-26. Hover over a club for details.</span>
+              </figcaption>
+              <ul class="chart-legend">
+                <li><span class="legend-swatch swatch-series1"></span>Champions League</li>
+                <li><span class="legend-swatch swatch-neutral"></span>Europa League</li>
+              </ul>
+              <div class="chart-frame" id="chart-europe"></div>
+            </figure>
+
+            <details>
+              <summary>Show the table by season</summary>
+              <div class="table-scroll"><table class="data-table"><caption>Clubs that gain a Champions League (top four) or Europa League (fifth) place when City&#x27;s results are removed.</caption><thead><tr><th scope="col">Season</th><th scope="col">City finished</th><th scope="col">Gains Champions League place</th><th scope="col">Gains Europa League place</th></tr></thead><tbody><tr><th scope="row">2008-09</th><td>10th</td><td>-</td><td>-</td></tr><tr><th scope="row">2009-10</th><td>5th</td><td>-</td><td>Aston Villa</td></tr><tr><th scope="row">2010-11</th><td>3rd</td><td>Tottenham Hotspur</td><td>Liverpool</td></tr><tr><th scope="row">2011-12</th><td>1st</td><td>Newcastle United</td><td>Chelsea</td></tr><tr><th scope="row">2012-13</th><td>2nd</td><td>Tottenham Hotspur</td><td>Liverpool</td></tr><tr><th scope="row">2013-14</th><td>1st</td><td>Everton</td><td>Tottenham Hotspur</td></tr><tr><th scope="row">2014-15</th><td>2nd</td><td>Tottenham Hotspur</td><td>Southampton</td></tr><tr><th scope="row">2015-16</th><td>4th</td><td>Manchester United</td><td>Southampton</td></tr><tr><th scope="row">2016-17</th><td>3rd</td><td>Arsenal</td><td>Manchester United</td></tr><tr><th scope="row">2017-18</th><td>1st</td><td>Chelsea</td><td>Arsenal</td></tr><tr><th scope="row">2018-19</th><td>1st</td><td>Arsenal</td><td>Manchester United</td></tr><tr><th scope="row">2019-20</th><td>2nd</td><td>Leicester City</td><td>Arsenal</td></tr><tr><th scope="row">2020-21</th><td>1st</td><td>West Ham United</td><td>-</td></tr><tr><th scope="row">2021-22</th><td>1st</td><td>Arsenal</td><td>Manchester United</td></tr><tr><th scope="row">2022-23</th><td>1st</td><td>Liverpool</td><td>Brighton &amp; Hove Albion</td></tr><tr><th scope="row">2023-24</th><td>1st</td><td>Tottenham Hotspur</td><td>Chelsea</td></tr><tr><th scope="row">2024-25</th><td>3rd</td><td>Newcastle United</td><td>Aston Villa</td></tr><tr><th scope="row">2025-26</th><td>2nd</td><td>Liverpool</td><td>Bournemouth</td></tr></tbody></table></div>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="analysis-narrow">
+          <article class="content-card">
+            <h2>Takeaways</h2>
+            <ul>
+              <li>
+                The takeover marks a clear break. City went from averaging <strong>13.5th</strong> with no titles to
+                averaging <strong>2.4</strong> with 8 titles, including 16 straight top-four finishes.
+              </li>
+              <li>
+                City's titles came at the expense of the traditional contenders. Without City, Manchester United and
+                Liverpool would each have three more league titles, and Arsenal two.
+              </li>
+              <li>
+                Further down the table, City's presence cost Tottenham and Arsenal the most European football: five
+                seasons each. Removing City doesn't always promote the next club, as the 2020-21 case shows.
+              </li>
+            </ul>
+
+            <h3>Limitations and next steps</h3>
+            <ul>
+              <li>
+                "Without City" is a counterfactual. It assumes every other result stays the same, and ignores things like
+                squad rotation around big games or fixture congestion from the European places City took.
+              </li>
+              <li>
+                Modelling European places properly would need cup results (FA Cup and League Cup winners), which the current
+                datasets don't include.
+              </li>
+              <li>
+                <code>league_table_excluding_team()</code> works for any club, so the same question can be asked about
+                other dominant periods, such as Manchester United in the 1990s and 2000s, or Chelsea after 2003.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="analysis-narrow">
+          <article class="content-card">
+            <h2>Data and methods</h2>
+            <ul class="source-list">
+              <li>
+                <strong>Data:</strong> public Premier League results datasets (1992-93 to 2022-23, 2000-01 to 2024-25,
+                and an early-season 2025-26 snapshot) plus football-data.co.uk files for the full 2024-25 and 2025-26
+                seasons, merged into one match table containing only the fields every season has: teams, date and
+                full-time score. The sources agree on the score of every match they share.
+              </li>
+              <li>
+                <strong>Tables:</strong> rebuilt from match results with 3 points for a win and 1 for a draw, ranked by
+                points, then goal difference, then goals scored.
+              </li>
+              <li>
+                <strong>Checks:</strong> the notebook tests its results against known facts (for example, City's 89-point
+                title in 2011-12 won on goal difference) and checks that every without-City table has one fewer team,
+                with each remaining team on two fewer games.
+              </li>
+              <li>
+                <strong>Takeover sources:</strong>
+                <a href="https://en.wikipedia.org/wiki/2008%E2%80%9309_Manchester_City_F.C._season" target="_blank" rel="noopener noreferrer">2008-09 Manchester City F.C. season (Wikipedia)</a>,
+                <a href="https://www.mancity.com/news/club/takeover-anniversary-gallery-63734552" target="_blank" rel="noopener noreferrer">mancity.com: 12 years since the takeover</a>,
+                <a href="https://premierleague25years.wordpress.com/2018/12/12/iconic-moments-the-abu-dhabi-group-takeover-manchester-city-september-2008/" target="_blank" rel="noopener noreferrer">Premier League Archive: the Abu Dhabi Group takeover</a>.
+              </li>
+            </ul>
+            <p style="margin-top: 1rem">
+              <a class="button secondary small" href="/projects/man-city-takeover-notebook.html">View the full notebook with code</a>
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>
+          &copy; <span data-current-year></span>
+          <span data-site-text="profile.name">Your Name</span>
+        </p>
+        <a
+          data-site-link="links.resume"
+          href="/Srikarran_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume PDF
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

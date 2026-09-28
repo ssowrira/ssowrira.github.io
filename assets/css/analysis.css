@@ -1,0 +1,483 @@
+/* Long-form data analysis pages (e.g. /projects/man-city-takeover.html). */
+
+.analysis-page {
+  --viz-series-1: #2a78d6;
+  --viz-neutral: #908e86;
+  --viz-grid: #e6eaee;
+  --viz-axis: #c3cbd2;
+  --viz-hover: rgba(19, 34, 48, 0.05);
+}
+
+:root[data-theme="dark"] .analysis-page {
+  --viz-series-1: #3987e5;
+  --viz-neutral: #8595a3;
+  --viz-grid: #263a49;
+  --viz-axis: #3b5568;
+  --viz-hover: rgba(255, 255, 255, 0.06);
+}
+
+.analysis-page .section {
+  margin-top: 1.4rem;
+}
+
+.analysis-narrow {
+  width: min(820px, 92vw);
+  margin: 0 auto;
+}
+
+.analysis-hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.6rem);
+  margin-bottom: 0.7rem;
+}
+
+.analysis-lead {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 62ch;
+}
+
+.analysis-meta {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+}
+
+.analysis-page .content-card {
+  padding: clamp(1rem, 2.6vw, 1.6rem);
+}
+
+.analysis-page .content-card h2 {
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+  margin-bottom: 0.7rem;
+}
+
+.analysis-page .content-card h3 {
+  margin-top: 1.4rem;
+}
+
+.analysis-page .content-card p + p,
+.analysis-page .content-card p + ul,
+.analysis-page .content-card ul + p {
+  margin-top: 0.75rem;
+}
+
+.analysis-page .content-card p strong,
+.analysis-page .content-card li strong {
+  color: var(--text);
+}
+
+.analysis-page code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+  padding: 0.05rem 0.3rem;
+}
+
+.section-number {
+  display: block;
+  color: var(--accent-strong);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+  margin-bottom: 0.35rem;
+}
+
+/* Stat tiles */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.stat-tile {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  box-shadow: var(--shadow);
+  padding: 0.9rem 1rem;
+  display: grid;
+  align-content: start;
+  gap: 0.2rem;
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.stat-value .stat-arrow {
+  color: var(--text-muted);
+  font-weight: 400;
+  margin: 0 0.15em;
+}
+
+.stat-note {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+/* Charts */
+
+.chart-figure {
+  margin: 1.2rem 0 0;
+}
+
+.chart-title {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.chart-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+}
+
+.chart-legend {
+  list-style: none;
+  margin: 0.55rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.analysis-page .content-card .chart-legend {
+  padding-left: 0;
+}
+
+.chart-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex: none;
+}
+
+.legend-line {
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  flex: none;
+}
+
+.chart-frame {
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.chart-frame svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.chart-frame text {
+  font-family: "Source Sans 3", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  fill: var(--text-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.chart-frame .label-strong {
+  fill: var(--text);
+  font-weight: 600;
+}
+
+.chart-frame .grid-line {
+  stroke: var(--viz-grid);
+  stroke-width: 1;
+}
+
+.chart-frame .axis-line {
+  stroke: var(--viz-axis);
+  stroke-width: 1;
+}
+
+.chart-frame .band {
+  fill: var(--text-muted);
+  opacity: 0.08;
+}
+
+.chart-frame .hit {
+  fill: transparent;
+  cursor: default;
+}
+
+.chart-frame .hit:hover,
+.chart-frame .hit:focus {
+  fill: var(--viz-hover);
+  outline: none;
+}
+
+.chart-frame .crosshair {
+  stroke: var(--viz-axis);
+  stroke-width: 1;
+  pointer-events: none;
+}
+
+.chart-tooltip {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  min-width: 9rem;
+  max-width: 16rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  box-shadow: var(--shadow);
+  padding: 0.5rem 0.65rem;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+.chart-tooltip .tt-head {
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.chart-tooltip .tt-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.chart-tooltip .tt-row + .tt-row {
+  margin-top: 0.15rem;
+}
+
+.chart-tooltip .tt-value {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.chart-caption {
+  margin-top: 0.6rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+/* Tables */
+
+.table-scroll {
+  overflow-x: auto;
+  margin-top: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.data-table caption {
+  text-align: left;
+  padding: 0.6rem 0.75rem 0;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.45rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.data-table thead th {
+  color: var(--text);
+  font-weight: 700;
+  background: var(--bg-elevated);
+}
+
+.data-table tbody tr:last-child td,
+.data-table tbody tr:last-child th {
+  border-bottom: none;
+}
+
+.data-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-table tbody th {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Disclosure blocks: table views and code */
+
+.analysis-page details {
+  margin-top: 0.9rem;
+}
+
+.analysis-page summary {
+  cursor: pointer;
+  color: var(--accent-strong);
+  font-weight: 700;
+  width: fit-content;
+}
+
+.analysis-page summary:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 0.3rem;
+}
+
+.analysis-page pre {
+  margin: 0.7rem 0 0;
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.analysis-page pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  color: var(--text);
+}
+
+.callout {
+  margin-top: 0.9rem;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-elevated);
+  border-radius: 0 0.6rem 0.6rem 0;
+  padding: 0.7rem 0.9rem;
+}
+
+.callout p {
+  font-size: 0.95rem;
+}
+
+.analysis-page .source-list {
+  font-size: 0.92rem;
+}
+
+@media (max-width: 860px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Chart marks, keyed to the palette tokens above */
+
+.chart-frame .m-series1 {
+  fill: var(--viz-series-1);
+}
+
+.chart-frame .m-neutral {
+  fill: var(--viz-neutral);
+}
+
+.chart-frame .m-series1-line {
+  fill: none;
+  stroke: var(--viz-series-1);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.chart-frame .m-series1-dot,
+.chart-frame .m-neutral-dot,
+.chart-frame .m-series1-dot-open {
+  stroke: var(--surface);
+  stroke-width: 2;
+}
+
+.chart-frame .m-series1-dot {
+  fill: var(--viz-series-1);
+}
+
+.chart-frame .m-neutral-dot {
+  fill: var(--viz-neutral);
+}
+
+.chart-frame .m-series1-dot-open {
+  fill: var(--surface);
+  stroke: var(--viz-series-1);
+}
+
+.chart-frame .m-connector {
+  stroke: var(--viz-axis);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.swatch-series1,
+.k-series1 {
+  background: var(--viz-series-1);
+}
+
+.swatch-neutral,
+.k-neutral {
+  background: var(--viz-neutral);
+}
+
+.swatch-open {
+  background: var(--surface);
+  border: 2px solid var(--viz-series-1);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.swatch-dot {
+  border-radius: 50%;
+}
+
+/* .content-card ul is a padded grid by default; these lists are inline rows. */
+.analysis-page .content-card .tag-list,
+.analysis-page .content-card .chart-legend {
+  display: flex;
+  padding-left: 0;
+}
+
+.chart-figure figcaption > span {
+  display: block;
+}
+
+.callout .table-scroll {
+  background: var(--surface);
+}

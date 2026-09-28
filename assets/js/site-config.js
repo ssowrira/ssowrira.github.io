@@ -17,7 +17,6 @@ window.SITE_CONFIG = {
     email: "srikarran.sowrirajan@gmail.com"
   },
   links: {
-    resume: "/Srikarran_Resume.pdf",
     email: "mailto:srikarran.sowrirajan@gmail.com",
     linkedin: "https://www.linkedin.com/in/srikarran",
     github: "https://github.com/ssowrira",

@@ -50,6 +50,36 @@ For every update:
 
 ## Change Log
 
+### 2026-09-28 | v1.6.0 | Added Scholar Button, Removed Contact Page, Updated Current Work
+- Type: `content`
+- Area: Home | Contact | Global
+- Files: `index.html`, `contact.html` (deleted), `publications.html`, `hobbies.html`, `projects.html`, `project.html`, `projects/legged-adaptive-control.html`, `projects/precice-fsi-gripper.html`, `projects/man-city-takeover.html`, `dev-notes/dev-notes.md`
+- Summary: Added a Google Scholar button next to Email, LinkedIn and GitHub on Home; deleted the Contact page and its nav link on every page; replaced the Robot-Assisted FibroScan current-work card with Robot Hand Teleoperation.
+- Impact: Visitors reach all contact and profile links from the Home page, the nav shows Home and Publications only, the Home "Get in touch" button opens an email, and Current Work (section and highlights panel) lists robot hand teleoperation instead of FibroScan.
+- Verification: Repository search confirms no remaining `contact.html` links or FibroScan mentions; served locally and checked the Home page buttons, nav and Current Work cards.
+- Commit: `543940a`
+- Follow-up: The Contact page's Availability list (collaborations, internships and full-time roles) is gone; the Home Contact box still says "Open to research collaborations, internships, and robotics engineering roles."
+
+### 2026-09-28 | v1.5.1 | Removed Resume Links
+- Type: `content`
+- Area: Global
+- Files: `index.html`, `contact.html`, `publications.html`, `hobbies.html`, `projects.html`, `project.html`, `projects/legged-adaptive-control.html`, `projects/precice-fsi-gripper.html`, `projects/man-city-takeover.html`, `assets/js/site-config.js`, `README.md`
+- Summary: Removed the resume button from every page header and footer, the Home "Resume PDF" button, the Contact page resume link and `links.resume` in `site-config.js`; Email became the primary Home action.
+- Impact: The site no longer links to the resume anywhere. `Srikarran_Resume.pdf` is intentionally kept in the repo, so it is still reachable by direct URL.
+- Verification: Repository search found no remaining resume links; Home page checked locally.
+- Commit: `c355ece`
+- Follow-up: `none`
+
+### 2026-09-28 | v1.5.0 | Added Man City Takeover Analysis Page
+- Type: `feature`
+- Area: Home | Project Detail
+- Files: `projects/man-city-takeover.html`, `projects/man-city-takeover-notebook.html`, `assets/js/man-city-takeover.js`, `assets/css/analysis.css`, `index.html`
+- Summary: Added a public write-up of the Premier League Man City takeover analysis (interactive charts, data tables, methods) plus the full notebook export, linked from a new Side Projects section on Home.
+- Impact: Visitors can read the analysis from the Home page card; unlike the template project pages, it is not redirected on the live site.
+- Verification: Rendered locally in Firefox at desktop and mobile widths, in light and dark themes.
+- Commit: `e7e3ede`
+- Follow-up: Regenerate the page and notebook export if the analysis notebook changes.
+
 ### 2026-03-18 | v1.4.4 | Restored Scholar Link Note on Publications Page
 - Type: `content`
 - Area: Global

@@ -36,7 +36,6 @@
         <nav class="site-nav" id="site-nav-home" data-open="false" aria-label="Primary">
           <a href="/index.html" aria-current="page">Home</a>
           <a href="/publications.html">Publications</a>
-          <a href="/contact.html">Contact</a>
         </nav>
         <div class="nav-actions">
           <button class="button secondary small" type="button" data-theme-toggle aria-pressed="false">
@@ -85,6 +84,15 @@
               >
                 GitHub
               </a>
+              <a
+                class="button secondary"
+                data-site-link="links.scholar"
+                href="https://scholar.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Scholar
+              </a>
             </div>
           </article>
 
@@ -111,7 +119,7 @@
               </div>
               <div class="metric">
                 <strong>Current Work</strong>
-                <span>Robot-assisted FibroScan, MuJoCo-based simulation pipelines, and multi-physics modeling.</span>
+                <span>Robot hand teleoperation, MuJoCo-based simulation pipelines, and multi-physics modeling.</span>
               </div>
               <div class="metric">
                 <strong>Focus</strong>
@@ -157,8 +165,7 @@
             <article class="content-card">
               <h3>Beyond Research</h3>
               <p>
-                Outside of research, I enjoy cooking, music, and exploring creative technical projects. I am also
-                interested in the broader societal impact of robotics and the role intelligent machines will play in
+                I am also interested in the broader societal impact of robotics and the role intelligent machines will play in
                 healthcare, industry, and everyday life.
               </p>
             </article>
@@ -170,15 +177,15 @@
         <div class="container">
           <h2>Current Work</h2>
           <p class="section-intro">
-            Ongoing projects focused on medical robotics, high-fidelity simulation, and contact-aware manipulation.
+            Ongoing projects focused on robot hand teleoperation, high-fidelity simulation, and contact-aware manipulation.
           </p>
           <div class="card-grid">
             <article class="content-card">
-              <h3>Robot-Assisted FibroScan</h3>
+              <h3>Robot Hand Teleoperation</h3>
               <p>
-                Development of a robotic platform capable of performing vibration-controlled transient elastography
-                (VCTE) for liver diagnostics. The system integrates robotic manipulation, force control, and probe
-                vibration dynamics to improve measurement consistency and support future autonomous diagnostics.
+                Development of a teleoperation system that lets a human operator control a multi-fingered robotic hand
+                in real time, mapping the operator's hand motion to the robot's fingers to perform dexterous
+                manipulation tasks.
               </p>
             </article>
             <article class="content-card">
@@ -232,7 +239,7 @@
               Open to research collaborations, internships, and robotics engineering roles.
             </p>
             <div class="cta-row" style="margin-top: 0">
-              <a class="button primary" href="/contact.html">Get in touch</a>
+              <a class="button primary" data-site-link="links.email" href="mailto:srikarran@example.com">Get in touch</a>
               <a class="button secondary" href="/publications.html">View publications</a>
             </div>
           </article>

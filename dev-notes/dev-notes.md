@@ -57,7 +57,7 @@ For every update:
 - Summary: Added a Google Scholar button next to Email, LinkedIn and GitHub on Home; deleted the Contact page and its nav link on every page; replaced the Robot-Assisted FibroScan current-work card with Robot Hand Teleoperation.
 - Impact: Visitors reach all contact and profile links from the Home page, the nav shows Home and Publications only, the Home "Get in touch" button opens an email, and Current Work (section and highlights panel) lists robot hand teleoperation instead of FibroScan.
 - Verification: Repository search confirms no remaining `contact.html` links or FibroScan mentions; served locally and checked the Home page buttons, nav and Current Work cards.
-- Commit: `543940a`
+- Commit: `a6d9c95` (committed under the message "docs(dev-notes): record commit hash for v1.6.0")
 - Follow-up: The Contact page's Availability list (collaborations, internships and full-time roles) is gone; the Home Contact box still says "Open to research collaborations, internships, and robotics engineering roles."
 
 ### 2026-09-28 | v1.5.1 | Removed Resume Links
